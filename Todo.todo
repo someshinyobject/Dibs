@@ -1,0 +1,28 @@
+PowerGenerator:
+  Scope:
+    Static site generator written in PowerShell
+  Tasks:
+    ☐ Define templating
+      ☐ Variable printing
+      ☐ Formatting
+      ☐ Looping
+      ☐ Partials
+      ☐ HTML structure
+      ☐ Attribute definition
+    ☐ Define folder structure
+    ☐ Create CmdLets to:
+      ☐ Render pages
+      ☐ Remove pages
+      ☐ Git store pages
+
+Dibs:
+  Scope:
+    Templating engine for use in PowerShell
+  Tasks:
+    ☐ Define templating
+      ☐ Variable printing
+      ☐ Formatting
+      ☐ Looping
+      ☐ Partials
+      ☐ HTML structure
+      ☐ Attribute definition

@@ -1,0 +1,34 @@
+# Dibs templating syntax
+# Comments follow PowerShell commenting syntax
+# Comments begin with the octothorpe (#)
+    # and indents don't matter
+# Block comments begin with <# and end with #>
+<#
+There are two types of variables for templating
+- Page variables
+- Shell variables
+
+
+Page variables can be declared at the top (and only at the top) 
+of the page with |_ var = value _|
+    - Output with |_ var _| 
+    - Spacing does not matter i.e.
+        - |_var_|       <-- Valid
+        - |_ var _|     <-- Valid
+        - |_   var   _| <-- Valid
+        - |_ var _      <-- Invalid (missing ending | character)
+    - Page variables are local to the page and are nonexistent once the page
+      has completed processing
+Shell variables are set via external processing in PowerShell
+    - A dollar sign ($) marks a shell variable 
+    - Output with |_ $shellVar _| 
+    - Shell variables cannot be set on a page
+#>
+|_pageTitle = "My Page"_|
+
+#
+html # comments can trail
+    head
+        # To output variables, wrap in |_  _|
+        #Page variables 
+        title |_ pageTitle " - " $siteTitle _|
