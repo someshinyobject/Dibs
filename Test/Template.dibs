@@ -8,7 +8,6 @@ There are two types of variables for templating
 - Page variables
 - Shell variables
 
-
 Page variables can be declared at the top (and only at the top) 
 of the page with |_ var = value _|
     - Output with |_ var _| 
@@ -26,9 +25,75 @@ Shell variables are set via external processing in PowerShell
 #>
 |_pageTitle = "My Page"_|
 
-#
+# Set the doctype for each page. This is
+# not needed when loading partials and will 
+# not be processed
+doctype html
+# The first word on a new line, unless wrapped in 
+# relevant syntax, will always be processed as an 
+# HTML tag. Closing tags are not needed. Indentation
+# is required to nest tags
 html # comments can trail
     head
         # To output variables, wrap in |_  _|
-        #Page variables 
+        # Use "" in the wrappers to add static
+        # content between variables
         title |_ pageTitle " - " $siteTitle _|
+    body
+        # To output static text in an element, use ""
+        h1 "Welcome!"
+        # Both of the following lines are allowed
+        h2 "This is my page, " |_ pageTitle _|
+        h2 |_ "This is my page, " pageTitle _|
+        # To add an id attribute to an element, 
+        # immediately after the element, use #
+        div#container
+            # To add a class, do the same as an 
+            # except with a period
+            p.content
+                "This is some content in a paragraph tag with a class of 'content'"
+            #chain classes with consecutive periods
+            p.content.important
+                <# 
+                For multiple lines, use 
+                @"
+                  content
+                  content
+                  You can use this to assign variables at the
+                  top also
+                "@
+                @" must be the only item on the line as must "@
+                but unlike PowerShell, it can be indented.
+                #>
+                @"
+                    This is very important content as you can see because it has a
+                    class of content and important.
+                "@
+"@ #remove later please
+            #lists work the same way
+            h3 "List of things"
+            ul
+                li "Item 1"
+                li "Item 2"
+
+            #tables also
+            h3 "Table of things"
+            table
+                tr
+                    th "Item"
+                    th "Quantity"
+                tr
+                    td "Socks"
+                    td "3"
+                tr
+                    td "Shirts"
+                    td "2"
+#variable assignment - done
+#variable printing - done
+#html tags - done
+#lists
+#tables
+#ids and classes - done
+#strings - done
+#looping - done
+#partial includes
