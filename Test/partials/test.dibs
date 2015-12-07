@@ -1,0 +1,19 @@
+<#
+    This is a partial. Partials contain portions of 
+    a larger HTML page often used for repetition or 
+    to segment layers of a page
+
+    Partials adhere to the variable construct laid 
+    out in the template file. Partial variables (or 
+    page variables) are still declared only at the top
+    of the partial file. Shell variables remain the
+    same.
+
+    The biggest difference between a page and a
+    partial is that a partial does not/will not get
+    a doctype added. An added doctype will be ignored
+    nor will one be generated since it is part of a larger 
+    page that already has a doctype defined.
+
+    A single variable can be passed to a partial
+#>

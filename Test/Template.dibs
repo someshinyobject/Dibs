@@ -91,9 +91,11 @@ html # comments can trail
 #variable assignment - done
 #variable printing - done
 #html tags - done
-#lists
-#tables
+#lists - done
+#tables - done
 #ids and classes - done
 #strings - done
-#looping - done
 #partial includes
+    #from files
+    #from quickpartials
+#looping
